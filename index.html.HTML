@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>فرم ثبت‌نام آکادمی</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Vazirmatn-font-face.css">
+  <style>
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background-color: #ffffff;
+      color: #001f4d;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+    }
+
+    .active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* 🎨 لوگوی بزرگ‌تر */
+    .logo {
+      width: 300px; /* بزرگ‌تر از قبل */
+      max-width: 85%;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    /* شعار برند */
+    h2 {
+      color: #001f4d;
+      margin: 15px auto 30px;
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      max-width: 600px;
+    }
+
+    /* دکمه طلایی */
+    button {
+      background-color: #d4af37;
+      color: #001f4d;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 40px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-bottom: 80px;
+    }
+
+    button:hover {
+      background-color: #e5c04a;
+    }
+
+    /* فرم ثبت‌نام */
+    #register {
+      padding-top: 40px;
+      overflow-y: auto;
+    }
+
+    form {
+      max-width: 420px;
+      margin: 0 auto;
+      text-align: right;
+      background-color: #f3f6fa;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #001f4d;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+  </style>
+
+  <!-- استایل تقویم شمسی -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jalaali-datepicker@0.1.2/dist/jalaali-datepicker.min.css">
+</head>
+<body>
+
+  <!-- صفحه خوش‌آمدگویی -->
+  <div id="welcome" class="page active">
+    <img src="https://i.postimg.cc/wj8WdqJ9/group-profiles.png" alt="لوگو آکادمی" class="logo">
+    <h2>ما تنها جایی هستیم که از اولین واژه تا تخصص کامل، مسیر یادگیری زبان را متناسب با هدف و زندگی هر فرد طراحی می‌کنیم.</h2>
+    <button id="joinBtn">عضویت</button>
+  </div>
+
+  <!-- صفحه ثبت نام -->
+  <div id="register" class="page">
+    <h2>فرم ثبت‌نام</h2>
+    <form action="https://script.google.com/macros/s/AKfycbw34wupgYXoVlUWupPO1pD98vNnzxwd0u4CuSO4sMmsUVakhYKUkQzRhwHjHYrQvG2X9w/exec" method="POST">
+      <label>نام و نام خانوادگی:</label>
+      <input type="text" name="name" required>
+
+      <label>شماره تلفن:</label>
+      <input type="tel" name="phone" required>
+
+      <label>شهر:</label>
+      <input type="text" name="city">
+
+      <label>کد ملی:</label>
+      <input type="text" name="national_id">
+
+      <label>سن:</label>
+      <input type="number" name="age" min="1" max="100">
+
+      <label>تاریخ تولد (تقویم شمسی):</label>
+      <input type="text" id="birth_date" name="birth_date" required placeholder="مثلاً 1380/05/12">
+
+      <button type="submit">ارسال</button>
+    </form>
+  </div>
+
+  <!-- اسکریپت‌ها -->
+  <script src="https://cdn.jsdelivr.net/npm/jalaali-datepicker@0.1.2/dist/jalaali-datepicker.min.js"></script>
+  <script>
+    // تغییر صفحه خوش‌آمدگویی به فرم
+    const joinBtn = document.getElementById("joinBtn");
+    const welcome = document.getElementById("welcome");
+    const register = document.getElementById("register");
+
+    joinBtn.addEventListener("click", () => {
+      welcome.classList.remove("active");
+      register.classList.add("active");
+      window.scrollTo(0, 0);
+    });
+
+    // فعال‌سازی تقویم شمسی
+    const input = document.getElementById("birth_date");
+    new JalaaliDatepicker(input, {
+      button: true,
+      lang: "fa",
+      format: "jYYYY/jMM/jDD"
+    });
+  </script>
+
+</body>
+</html>
