@@ -31,15 +31,13 @@
       text-align: center;
     }
 
-    /* 🎨 لوگوی بزرگ‌تر */
     .logo {
-      width: 300px; /* بزرگ‌تر از قبل */
+      width: 300px;
       max-width: 85%;
       display: block;
       margin: 0 auto 20px;
     }
 
-    /* شعار برند */
     h2 {
       color: #001f4d;
       margin: 15px auto 30px;
@@ -48,7 +46,6 @@
       max-width: 600px;
     }
 
-    /* دکمه طلایی */
     button {
       background-color: #d4af37;
       color: #001f4d;
@@ -66,7 +63,6 @@
       background-color: #e5c04a;
     }
 
-    /* فرم ثبت‌نام */
     #register {
       padding-top: 40px;
       overflow-y: auto;
@@ -99,7 +95,6 @@
     }
   </style>
 
-  <!-- استایل تقویم شمسی -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jalaali-datepicker@0.1.2/dist/jalaali-datepicker.min.css">
 </head>
 <body>
@@ -114,7 +109,7 @@
   <!-- صفحه ثبت نام -->
   <div id="register" class="page">
     <h2>فرم ثبت‌نام</h2>
-    <form action="https://script.google.com/macros/s/AKfycbw34wupgYXoVlUWupPO1pD98vNnzxwd0u4CuSO4sMmsUVakhYKUkQzRhwHjHYrQvG2X9w/exec" method="POST">
+    <form action="https://script.google.com/macros/s/AKfycbwatUPFCnFqgmAYC_cxDqjHRQ7cnduiGPSs1k1swlJzeZfK-kMOwLQ36Ff-H9XC5L6X/exec" method="POST">
       <label>نام و نام خانوادگی:</label>
       <input type="text" name="name" required>
 
@@ -137,10 +132,8 @@
     </form>
   </div>
 
-  <!-- اسکریپت‌ها -->
   <script src="https://cdn.jsdelivr.net/npm/jalaali-datepicker@0.1.2/dist/jalaali-datepicker.min.js"></script>
   <script>
-    // تغییر صفحه خوش‌آمدگویی به فرم
     const joinBtn = document.getElementById("joinBtn");
     const welcome = document.getElementById("welcome");
     const register = document.getElementById("register");
@@ -151,7 +144,6 @@
       window.scrollTo(0, 0);
     });
 
-    // فعال‌سازی تقویم شمسی
     const input = document.getElementById("birth_date");
     new JalaaliDatepicker(input, {
       button: true,
@@ -162,3 +154,4 @@
 
 </body>
 </html>
+
